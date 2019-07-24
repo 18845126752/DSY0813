@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //给参数设默认值
+    // function foo(a,b=10){
+    //     console.log(a+b);
+    // }
+    // foo(1,2)
+
+    //方法名.length返回没有设置默认值的参数个数,如果遇到赋值的那么其后面的都不计入长度内，此时长度为2
+        // function foo(a,b,c=1){
+        //     // console.log(a,b);
+        // }
+        // foo(1,2,3)
+        // console.log(foo.length);
+
+        //方法名.name
+        // let foo = function foo2(){
+        //     console.log(1223);
+            
+        // }
+        // // foo();
+        //  console.log(foo.name);//输出foo2
+
+        //'use strict' 开启js的严格模式
+        "use strict"
+        //1.全局变量必须显示声明
+        let a = 10 ;
+        console.log(a);
+
+        //2.禁止this关键字指向全局变量
+        function foo(){
+            console.log(this);
+            
+        }
+        foo();//输出window,但是开启严格模式报错
+
+        //3.函数不能有重复的参数
+        // function foo(a,a,b){
+        //     console.log(a,b);
+            
+        // }
+        // foo( 1,2,3);
+
+        
+        let obj = {
+            name:"aa",
+        }
+        with(obj){
+            console.log(this.name);
+            
+        }
+        
+        
+    </script>
+</body>
+</html>

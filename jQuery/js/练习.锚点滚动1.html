@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <style>
+      #div1{
+        height: 3000px;
+        background-color: red;
+        color: blue;
+      }
+      #div2{
+        height: 3000px;
+        background-color:yellow;
+        /* font-size: 32px;
+        color: white; */
+      }
+      #div3{
+        height: 3000px;
+        background-color:green;
+        /* font-size: 32px;
+        color: white; */
+      }
+      button{
+        position: fixed;
+        bottom: 0;
+        right: 10px;
+      }
+      #a1{
+          position: fixed;
+          top:10px;
+          left: 10px;
+      }
+      #a2{
+          position: fixed;
+          top:10px;
+          left: 65px;
+      }
+      #a3{
+          position: fixed;
+          top:10px;
+          left: 120px;
+      }
+      h1{
+          font-size: 32px;
+          color: white;
+      }
+      button{
+      position: fixed;
+      bottom: 0;
+      right: 10px;
+    }
+    </style>
+</head>
+<body>
+        <div id="div1">
+                <a  id="a1" href="#div1">第一页</a>
+                <a  id="a2" href="#div2">第二页</a>
+                <a  id="a3" href="#div3">第三页</a>
+                <br><h1>1</h1>
+            </div>
+            <div id="div2"><br><h1>2</h1></div>
+            <div id="div3"><br><h1>3</h1></div>
+            <button id="btn">top</button>
+<script>
+    $("a").on("click",function(){
+        $('html,body').animate({
+            scrollTop:$($(this).attr("herf")).offset().top
+        },1000)
+    })
+    $(window).on("scroll",function(){
+      console.log($(this).scrollTop());
+    })
+    $("#btn").on("click",function(){
+      $(window).scrollTop(0);
+    })
+</script>
+</body>
+</html>

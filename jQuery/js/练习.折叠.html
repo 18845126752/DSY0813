@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <style>
+        table {
+            border: 0;
+            border-collapse: collapse;
+        }
+
+        /* div{ 
+          font:normal 12px/17px Arial;
+        } */
+        td {
+            font: normal 12px/17px Arial;
+            padding: 2px;
+            width: 100px;
+        }
+
+        #td1{
+            background: yellow;
+        }
+        #td2{
+            background: yellow;
+        }
+        #td3{
+            background: yellow;
+        }
+
+        th{
+            font: bold 12px/17px Arial;
+            text-align: left;
+            padding: 4px;
+            border-bottom: 1px solid #333;
+            width: 100px;
+        }
+        .active{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>暂住地</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="td1" colspan="3">前端设计组</td>
+            </tr>
+            <tr id ="tr1">
+                <td>李四</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr id="tr2">
+                <td>王五</td>
+                <td>男</td>
+                <td>湖南长沙</td>
+            </tr>
+
+            <tr>
+                <td id="td2"  colspan="3">前端设计组</td>
+            </tr>
+            <tr id="tr3">
+                <td>Rain</td>
+                <td>男</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr id="tr4">
+                <td>MAXMAN</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+
+            <tr>
+                <td id="td3"  colspan="3">前端设计组</td>
+            </tr>
+            <tr id="tr5">
+                <td>李字</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr id="tr6">
+                <td>李四</td>
+                <td>男</td>
+                <td>湖南长沙</td>
+            </tr>
+        </tbody>
+        <script>
+            $("#td1").click(function () {
+                $("#tr1,#tr2").toggleClass("active");//替换
+            });
+            $("#td2").click(function () {
+                $("#tr3,#tr4").toggleClass("active");
+            });
+            $("#td3").click(function () {
+                $("#tr5,#tr6").toggleClass("active");
+            });
+
+        </script>
+    </table>
+</body>
+
+</html>

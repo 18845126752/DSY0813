@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    .div1{
+        width: 400px;
+        height: 400px;
+        background-color: blue;
+        overflow: hidden;
+    }
+    /* 块级格式化上下文解决外边距溢出问题(只能约束子集)  overflow:hidden*/
+    /* 解决外边距重叠问题 (兄弟级元素)display:inline-block */
+
+    .div2{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin-top: 20px;
+    }
+    .div3{
+        width: 400px;
+        height: 400px;
+        background-color: red;
+        margin-bottom: 30px;
+        display:inline-block;
+    }
+    .div4{
+        width: 400px;
+        height: 400px;
+        background-color:blue;
+        margin-bottom: 10px;
+    }
+    .div5{
+        width: 400px;
+        height: 200px;
+    }
+    .div6{
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        float: left;
+    }
+    .div7{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        float: right;
+    }
+    </style>
+</head>
+<body>
+    <!-- bfc -->
+    <!-- <div class="div1">
+        <div class="div2"></div>
+    </div> -->
+    <!-- <div class="div3"></div>
+    <div class="div4"></div> -->
+    <div class="div5">
+        <div class="div6"></div>
+        <div class="div7"></div>
+    </div>
+</body>
+</html>

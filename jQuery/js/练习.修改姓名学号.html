@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        } 
+        th {
+            font: bold 12px/17px Arial;
+            /* text-align: left; */
+            padding: 4px;
+            border-bottom: 1px solid #333;
+            width: 100px;
+            margin: 0 auto;
+        }
+        td {
+            font: normal 12px/17px Arial;
+            padding: 2px;
+            width: 100px;
+            border: 1px solid #333;
+        }
+
+        #tr1{
+            font-weight: bold;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead><tr><th  colspan="2">鼠标点击表格就可以修改</th></tr></thead>
+        <tbody>
+            <tr id="tr1"><td>学号</td><td>姓名</td></tr>
+            <tr><td>1</td><td class="editable">张三</td></tr>
+            <tr><td>2</td><td class="editable">张三</td></tr>
+            <tr><td>3</td><td class="editable">张三</td></tr>
+            <tr><td>4</td><td class="editable">张三</td></tr>
+        </tbody>
+    </table>
+    <script>
+    $(".editable").on("click",function(){
+        if($(this).children().length==0){
+            var thisVal = $(this).text();
+        var newInp = $("<input type='text'>");
+        newInp.val(thisVal);
+        $(this).text("");
+        $(this).append(newInp);
+        newInp.focus();
+        }
+    })
+    $(".editable").focusout(function(){
+        var inpVal = $(this).find("input").val();
+        // $(this).html("");
+        $(this).empty();
+        $(this).text(inpVal);
+    })
+    $(".editable").on("keydown",function(e){
+        if(e.which == 13){
+            $(this).trigger("focusout");
+        }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/zepto.js"></script>
+  <script src="./js/touch.js"></script>
+  <style>
+  #can{
+      background-color: rgb(245, 173, 245);
+  }
+  </style>
+</head>
+<body>
+    <canvas id="can" width="400" height="200"></canvas>
+    <script>
+    var oCan = document.getElementById("can");
+    var context = oCan.getContext("2d");
+    oCan.ontouchstart = function(e){
+        var thisX = e.changedTouches[0].clientX;
+        var thisY = e.changedTouches[0].clientY;
+        context.beginPath();
+        context.lneWidth=2;
+        context.strokeStyle = "#ffffff";
+        context.moveTo(thisX,thisY);
+    }
+    oCan.ontouchmove = function(e){
+        var thisX = e.changedTouches[0].clientX;
+        var thisY = e.changedTouches[0].clientY;
+        context.beginPath();
+        context.moveTo(thisX,thisY);
+    }
+    </script>
+</body>
+</html>

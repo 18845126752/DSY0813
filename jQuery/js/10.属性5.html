@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div id="div1">hello</div>
+    <p>world</p>
+    <script>
+    // var $cloneP = $("p").clone();
+    // $("#div1").append($cloneP)
+        $("p").wrap("<div></div>")//把每个匹配的元素都包裹一层HTML结构
+        //wrapAll 包裹一个集合
+        $("p").wrapTnner("<div></div>")//在内部字内容外面包裹
+        
+    </script>
+</body>
+</html>

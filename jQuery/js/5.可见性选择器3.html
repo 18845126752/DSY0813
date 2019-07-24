@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <style>
+    div{
+        /* opacity: 0;
+        visibility: hidden;  //空间在元素看不到  */
+         display: none; 
+    }
+    
+    </style>
+</head>
+<body>
+    <input type="hidden">
+    <div>hello
+        <div>fellow32</div>
+    </div>
+    <p>world</p>
+    <script>
+    $("div").on("click",function(){
+        console.log(this);
+        
+    })
+    </script>
+</body>
+</html>

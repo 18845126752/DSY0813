@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-3.4.1.js"></script>
+  <style>
+    table {
+            border: 0;
+            border-collapse: collapse;
+        }
+
+        td {
+            font: normal 12px/17px Arial;
+            padding: 2px;
+            width: 100px;
+        }
+
+        th {
+            font: bold 12px/17px Arial;
+            text-align: left;
+            padding: 4px;
+            border-bottom: 1px solid #333;
+        }
+        .id1,.id3,.id5{
+            background: yellow;
+        }
+        .selected{
+            background: #FF6500;
+            color: #fff;
+        }  
+  </style>
+</head>
+<body>
+    <table>
+        <thead>
+                <tr>
+                        <th></th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>暂住地</th>
+                    </tr>
+        </thead>
+        <tbody>
+                <tr class="id1">
+                        <td><input type="radio" name="choice"  value=""></td>
+                        <td>张山</td>
+                        <td>男</td>
+                        <td>浙江宁波</td>
+                    </tr>
+                    <tr class="id2">
+                        <td><input type="radio"  name="choice" value=""></td>
+                        <td>王五</td>
+                        <td>男</td>
+                        <td>湖南长沙</td>
+                    </tr>
+                    <tr class="id3"> 
+                        <td><input type="radio"  name="choice" value=""></td>
+                        <td>赵柳</td>
+                        <td>南</td>
+                        <td>浙江温州</td>
+                    </tr>
+                    <tr class="id4">
+                        <td><input type="radio"  name="choice" value=""></td>
+                        <td>Rain</td>
+                        <td>男</td>
+                        <td>浙江杭州</td>
+                    </tr>
+                    <tr class="id5">
+                        <td><input type="radio"  name="choice" value=""></td>
+                        <td>MAX</td>
+                        <td>女</td>
+                        <td>浙江杭州</td>
+                    </tr>
+                    <tr class="id6">
+                        <td><input type="radio"  name="choice" value=""></td>
+                        <td>王六</td>
+                        <td>男</td>
+                        <td>浙江杭州</td>
+                    </tr>
+        </tbody>
+    </table>
+      <script>
+        $("tbody tr").on("click",function(){
+          $(this).addClass("selected").siblings().removeClass("selected").end().find(":radio").prop("checked",true)
+          // $(this).find(":radio").prop("checked",true);
+        })
+      </script>
+</body>
+</html>
+
