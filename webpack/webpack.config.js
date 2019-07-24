@@ -1,6 +1,6 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry:{
     index:"./src/index.js"
@@ -14,13 +14,25 @@ module.exports = {
       {
         test:/\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback:"style-loader",
-          use:"css-loader"
+          fallback: "style-loader",
+          use: "css-loader",
+          publicPath:"../"
         })
+      },{
+        test:/\.(jpg|png|gif)$/,
+        use:[{
+          loader:'url-loader',
+          options:{
+            limit:300,
+            outputPath:"image/"
+          }
+        }]
+      },{
+        test:/\.html$/,
+        loader:'html-withimg-loader'
       }
     ]
   },
-
   plugins:[
     new ExtractTextPlugin("css/main.css"),
     new HtmlWebpackPlugin({  
