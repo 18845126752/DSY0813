@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="msg" placeholder="搜索">搜索
+        <br />
+        <input type="text" v-model="msg" placeholder="名称">
+        <input type="text" v-model="msg" placeholder="0">添加
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>选择</th>
+                    <th>商品名称</th>
+                    <th>商品价格</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in choose" v-on:click="touch" v-bind:class="{active:isActive}">
+                    <th scope="row"><input type="checkbox"></th>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td><button>删除</button></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name:"",
+                price:"",
+
+                choose: [
+                    {
+                        name: "衣服",
+                        price: "123",
+                    },
+                    {
+                        name: "裤子",
+                        price: "456",
+                    },
+                    {
+                        name: "鞋",
+                        price: "444",
+                    },
+                    {
+                        name: "帽子",
+                        price: "666",
+                    },
+                    {
+                        name: "手套",
+                        price: "88",
+                    }
+                ]
+            },
+            methods:{
+                touch(){
+                    
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
