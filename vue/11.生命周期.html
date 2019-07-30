@@ -11,36 +11,59 @@
     <div id="app">
         <div>
             <button @click="add">add</button>
-            <button @click="destroyHandle">destroy</button>
+            <button @click="destroyHandle">ddestroy</button>
         </div>
-        <h1>{{num}}</h1>
+        <h1>{{num}}</h1> 
     </div>
+    
     <script>
-   new Vue ({
-        el:"#app",
-        data:{
-            num:0
+       
+        new Vue({
+            el:"#app",
+            data:{
+        num:0,
+        timer:null
+      },
+      methods:{
+        add(){
+            this.num++
         },
-        methods: {
-            add(){
-                this.num++
-            },
-            destroyHandle(){
-                this.$destroy()
-            }
-        },
-        beforeCreate() {
-            console.log('beforeCreate');
-            this.timer = setInterval(function(){
-                console.log(123);
-                
-            },1000)
-        },
-        beforeDestroy() {
-            console.log(' beforeDestroy');
+        destroyHandle(){
+            this.$destroy()
             clearInterval(this.timer)
-        },
-    })
+        }
+      },
+      beforeCreate() {
+        console.log('beforeCreate');
+        
+      },
+      created () {
+        console.log('created');
+        this.timer= setInterval(function(){
+            console.log(123);
+            
+        },1000)
+      },
+      beforeMount() {
+        console.log('beforeMount');
+      },
+      mounted() {
+        console.log('mounted');
+      },
+      beforeUpdate () {
+        console.log('beforeUpdate');
+      },
+      updated() {
+        console.log('updated');
+      },
+      beforeDestroy() {
+        console.log('beforeDestroy');
+        clearInterval(this.timer)
+      },
+      destroyed() {
+        console.log('destroyed');
+      },
+        })
     </script>
 </body>
 </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <style>
+        .mosk {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .login {
+            width: 400px;
+            height: 200px;
+            background-color: #fff;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .header {
+            height: 30px;
+            background-color: #000;
+            color: #fff;
+            padding: 0 10px;
+        }
+
+        .header span:last-child {
+            float: right;
+        }
+
+        .container {
+            display: none;
+        }
+        .container1 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">登陆</button>
+    <button id="btn1">注册</button>
+    <div class="container">
+        <div class="mosk"></div>
+        <div class="login">
+            <div class="header">
+                <span>登陆</span>
+                <span id="close">X</span>
+            </div>
+            <div class="content">
+                <h1>登陆</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container1">
+            <div class="mosk"></div>
+            <div class="login">
+                <div class="header">
+                    <span>注册</span>
+                    <span id="close1">X</span>
+                </div>
+                <div class="content">
+                    <span>用户名</span>
+                    <input type="text">
+                    <button>注册</button>
+                </div>
+            </div>
+        </div>
+        
+
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oBtn1 = document.getElementById("btn1");
+        var oContainer = document.getElementsByClassName("container")[0];
+        var oContainer1 = document.getElementsByClassName("container1")[0];
+        var oClose = document.getElementById("close");
+        var oClose1 = document.getElementById("close1");
+        oBtn.onclick = function () {
+            oContainer.style.display = "block";
+            console.log(11);
+
+        }
+        oClose.onclick = function () {
+            oContainer.style.display = "none";
+        }
+        oBtn1.onclick = function () {
+            oContainer1.style.display = "block";
+            console.log(11);
+
+        }
+        oClose1.onclick = function () {
+            oContainer1.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
