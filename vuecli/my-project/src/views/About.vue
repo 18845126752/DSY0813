@@ -4,17 +4,20 @@
     <HelloWorld :msg="str"/>
   </div>
 </template>
-// <script>
-// import HelloWorld from "../components/HelloWorld"
-// export default{
-//   name:"about",
-//   data(){
-//     return{
-//       str:"hello"
-//     }
-//   },
-//   components:{
-//     "HelloWorld"
-//   }
-// }
-// </script>
+<script>
+import HelloWorld from "../components/HelloWorld"
+export default {
+  name: "about",
+  data() {
+    return {
+      str: "hello"
+    }
+  },
+  components:{
+    HelloWorld
+  }
+}
+</script>
+<style scoped>
+
+</style>
