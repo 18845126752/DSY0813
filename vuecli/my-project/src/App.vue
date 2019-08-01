@@ -11,12 +11,14 @@
       <router-link to="/about">About</router-link>|
       <router-link to="/connect">connect</router-link>|
       <router-link to="/mine">mine</router-link> |
-      <router-link to="/aboutme">aboutme</router-link>
+      <router-link to="/aboutme">aboutme</router-link> |
+      <router-link to="/test3">test3</router-link>
     </div>
     <div class="fadecontent">
-<transition name="fade">
+<!-- <transition name="fade"> -->
       <router-view/>
-    </transition>
+       <router-view name="view1"/>
+    <!-- </transition> -->
     </div>
     
     
