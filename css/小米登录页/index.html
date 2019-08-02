@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .header{
+        height: 98px;
+    }
+    .header-panel{
+        height: 98px;
+        width: 1130px;
+        margin: 0 auto;
+    }
+    .header-img{
+        height: 98px;
+        width: 200px;
+        background: url("https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png");
+    }
+    .conter-bg{
+        height: 588px;
+        background-image: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0408d4deb7486a19c16949eacebe9e42.jpg");
+        background-position: center center;
+    }
+    .conter{
+        position: relative;
+    }
+    .conter-panel{
+        height: 588px;
+        width: 1130px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -565px;
+    }
+    .login-form{
+        width: 345px;
+        height: 410px;
+        background-color: white;
+        position: absolute;
+        right: 0;
+        top:40px;
+    }
+    .lf-header{
+        text-align: center;
+        padding: 20px 0;
+    }
+    .lf-header a{
+        text-decoration: none;
+        font-size: 24px;
+        color: #666;
+    }
+    .lf-header .active{
+        color: #f56600;
+    }
+    .lf-header .line{
+        margin: 0 35px 0 42px;
+        color: #e0e0e0;
+        border:1px solid 
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-panel">
+            <div class="header-img"></div>
+        </div>
+    </div>
+    <div class="conter">
+        <div class="conter-bg"></div>
+        <div class="conter-panel">
+            <div class="login-form">
+                <div class="lf-header">
+                    <a class="active" href="javascript:void(0)">账号登录</a>
+                    <span class="line"></span>
+                    <a href="javascript:void(0)">扫描登录</a>
+                </div>
+                <div class="lf-conter"></div>
+                <div class="lf-footer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
